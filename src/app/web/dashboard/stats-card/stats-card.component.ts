@@ -1,0 +1,14 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-stats-card',
+  templateUrl: './stats-card.component.html',
+  styleUrls: ['./stats-card.component.css']
+})
+export class StatsCardComponent {
+@Input() title = 'Support Requests';
+  @Input() value = '350+';
+  @Input() description = 'Total number of support requests that come in.';
+
+  constructor() { }
+}

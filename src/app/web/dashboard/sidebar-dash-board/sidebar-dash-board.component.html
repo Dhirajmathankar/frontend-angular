@@ -1,0 +1,32 @@
+<aside class="sidebar">
+  <!-- User Profile Section -->
+  <div class="user-profile">
+    <img src="https://placehold.co/40x40/6366f1/ffffff?text=U" alt="User Avatar" class="avatar">
+    <div>
+      <p class="user-name">UI/UX Designer</p>
+    </div>
+  </div>
+
+  <!-- Navigation Section -->
+  <nav class="navigation">
+    <p class="nav-title">Navigation</p>
+    <ul>
+      <li *ngFor="let link of navLinks" [class.active]="link.name === activeLink">
+        <div class="nav-item"  (click)="SelectMenuOption(link.name)">
+          <i-lucide [name]="link?.icon" class="nav-icon"></i-lucide>
+          <span style=" white-space: nowrap;">{{ link?.name }}</span>
+          <i-lucide name="chevron-right" class="arrow-icon"></i-lucide>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- AI Assistant CTA -->
+  <div class="ai-assistant-card">
+    <div class="ai-icon-container">
+      <img src="https://placehold.co/50x50/ffffff/3b82f6?text=AI" alt="AI Bot" class="ai-bot-icon"/>
+    </div>
+    <p>Try the AI Assistant</p>
+    <button class="btn-upgrade">Upgrade</button>
+  </div>
+</aside>

@@ -1,0 +1,12 @@
+
+<div class="app-container">
+  <app-sidebar-dash-board  (menuSelected)="onMenuChange($event)"></app-sidebar-dash-board>
+  <main class="main-content">
+    <app-header-main></app-header-main>
+    <div class="content-wrapper">
+        <app-dashboard-grid   *ngIf="selectedMenu === 'Dashboard'"  ></app-dashboard-grid>
+        <app-product-showcase *ngIf="selectedMenu === 'Product'" [data]="showcasePageData"></app-product-showcase>
+      
+    </div>
+  </main>
+</div>

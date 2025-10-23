@@ -1,0 +1,72 @@
+<div class="showcase-container" *ngIf="data">
+  <!-- Products -->
+  <div class="showcase-column">
+    <h2 class="column-title">Products</h2>
+    <div class="items-list">
+      <div class="item-card" 
+	  *ngFor="let item of data.products"
+	  [class.selected]="item.id === selectedPluginId"
+      (click)="selectPlugin(item)"
+	  >
+        <div class="icon-container">
+          <i-lucide [name]="item.icon" class="icon"></i-lucide>
+        </div>
+        <span class="item-name">{{ item.name }}</span>
+        <div class="actions">
+          <span *ngIf="item.isFavorite" class="material-icons-outlined favorite-icon">favorite_border</span>
+          <span *ngIf="item.hasAction" class="material-icons-outlined action-icon">chevron_right</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plugins -->
+  <div class="showcase-column">
+    <h2 class="column-title">Plugins</h2>
+    <div class="items-list">
+      <div
+        class="item-card"
+        *ngFor="let item of data.plugins"
+        [class.selected]="item.id === selectedPluginId"
+        (click)="selectPlugin(item)"
+      >
+        <div class="icon-container">
+          <i-lucide [name]="item.icon" class="icon"></i-lucide>
+        </div>
+        <span class="item-name">{{ item.name }}</span>
+        <div class="actions">
+          <span *ngIf="item.isFavorite" class="material-icons-outlined favorite-icon">favorite_border</span>
+          <span *ngIf="item.hasAction" class="material-icons-outlined action-icon">chevron_right</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Non-Production Ready -->
+  <div class="showcase-column">
+    <h2 class="column-title">Non-Production Ready</h2>
+    <div class="items-list">
+      <div class="item-card" 
+	  *ngFor="let item of data.nonProductionReady"
+	  [class.selected]="item.id === selectedPluginId"
+      (click)="selectPlugin(item)"
+		>
+        <div class="icon-container">
+          <i-lucide [name]="item.icon" class="icon"></i-lucide>
+        </div>
+        <span class="item-name">{{ item.name }}</span>
+        <div class="actions">
+           <span *ngIf="item.isFavorite" class="material-icons-outlined favorite-icon">favorite_border</span>
+           <span *ngIf="item.hasAction" class="material-icons-outlined action-icon">chevron_right</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="pagination-dots">
+  <span class="dot"></span>
+  <span class="dot active"></span>
+  <span class="dot"></span>
+</div>

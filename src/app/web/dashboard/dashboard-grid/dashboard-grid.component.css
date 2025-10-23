@@ -1,0 +1,40 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.card-span-1 { grid-column: span 1; }
+.card-span-2 { grid-column: span 2; }
+.card-span-3 { grid-column: span 3; }
+.card-span-5 { grid-column: span 5; }
+
+.bottom-stat-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  p {
+    margin: 0;
+    color: #6b7280;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card-span-3 { grid-column: span 5; }
+  .card-span-2 { grid-column: span 5; }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .card-span-1, .card-span-2, .card-span-3, .card-span-5 {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,55 @@
+<!-- 
+<div class="auth-wrapper" style="background-image: url('assets/background/bg1.png'); background-repeat:unset;">
+  <div class="auth-container">
+    <div class="form-section">
+      <h1 class="title">FUNDO-FREIND</h1>
+
+      <div class="tab-buttons">
+        <button (click)="switchForm('login')" [class.active]="activeForm === 'login'">Login</button>
+        <button (click)="switchForm('signup')" [class.active]="activeForm === 'signup'">Sign Up</button>
+      </div>
+
+      <div class="form-card" *ngIf="activeForm === 'login'">
+        <h2>Welcome Back!</h2>
+        <p>Log in to your account</p>
+        <form>
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" />
+          <label>Password</label>
+          <input type="password" placeholder="Enter your password" />
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+      </div>
+
+      <div class="form-card" *ngIf="activeForm === 'signup'">
+        <h2>Create Account</h2>
+        <p>Join FUNDO-FREIND today!</p>
+        <form>
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email" />
+          <label>Password</label>
+          <input type="password" placeholder="Create a password" />
+          <label>Confirm Password</label>
+          <input type="password" placeholder="Confirm your password" />
+          <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <div class="image-section">
+      <img src="assets/login/loginpage1.png" alt="Side Display" />
+    </div>
+  </div>
+</div> -->
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label>Email</label>
+  <input type="email" formControlName="email" placeholder="Enter your email" />
+
+  <label>Password</label>
+  <input type="password" formControlName="password" placeholder="Enter your password" />
+
+  <button type="submit" class="submit-btn" [disabled]="isLoading">Login</button>
+
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+</form>

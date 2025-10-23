@@ -1,0 +1,29 @@
+<div class="projects-card">
+  <h4>Projects</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Assigned</th>
+        <th>Name</th>
+        <th>Due Date</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>
+          <div class="user-cell">
+            <div class="avatar">{{ project.avatar }}</div>
+            <div>
+              <p class="user-name">{{ project.name }}</p>
+              <p class="user-role">{{ project.role }}</p>
+            </div>
+          </div>
+        </td>
+        <td>{{ project.status }}</td>
+        <td>{{ project.dueDate }}</td>
+        <td><span class="priority-badge" [ngClass]="project.priorityClass">{{ project.priority }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

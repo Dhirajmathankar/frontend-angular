@@ -1,0 +1,138 @@
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e7eb;
+  flex-shrink: 0; /* Prevents the sidebar from shrinking */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.5rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-profile .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-profile .user-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.navigation {
+  padding-top: 1.5rem;
+  flex-grow: 1;
+}
+
+.navigation .nav-title {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ✅ a tag की styling अब div.nav-item पर */
+.navigation li .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 8px;
+  color: #6b7280;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.navigation li .nav-item .nav-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+}
+
+.navigation li .nav-item .arrow-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+}
+
+.navigation li.active .nav-item,
+.navigation li:hover .nav-item {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+}
+
+.ai-assistant-card {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+.ai-assistant-card .ai-icon-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai-assistant-card .ai-bot-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.ai-assistant-card p {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ai-assistant-card .btn-upgrade {
+  background-color: white;
+  color: #4f46e5;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  .navigation ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .ai-assistant-card {
+    display: none; /* Hide on smaller screens for simplicity */
+  }
+}

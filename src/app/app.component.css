@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  font-family: 'Inter', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+  overflow-x: hidden; 
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+}

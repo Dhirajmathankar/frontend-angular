@@ -1,0 +1,163 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --blue-glow: rgba(0, 174, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: row;
+  background: rgb(255 108 15 / 93%);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 2px solid var(--blue-glow);
+  box-shadow: 0 0 25px var(--blue-glow);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.form-section {
+  flex: 1;
+  padding: 40px;
+  color: #007fff;
+}
+
+.image-section {
+  flex: 1;
+  background: rgb(255 108 15 / 93%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #00aaff;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-buttons button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: #444;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.tab-buttons button.active {
+  border-color: #00bfff;
+  color: #00bfff;
+  font-weight: 600;
+}
+
+.form-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-card h2 {
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.form-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #444;
+}
+
+input {
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8faff;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  background: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #009ad8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+}

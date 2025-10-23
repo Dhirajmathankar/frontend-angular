@@ -1,0 +1,108 @@
+<!-- Make sure you have added Bootstrap to your project -->
+<!-- 1. npm install bootstrap -->
+<!-- 2. In angular.json, add "node_modules/bootstrap/dist/css/bootstrap.min.css" to styles array -->
+
+<!-- <div class="form-container-background">
+  <div class="form-wrapper container-fluid" style="margin: 1rem;background: linear-gradient(90deg, #89a7ef8f 0%, #9883e966 50%, #ef1fc038 100%); width: 97%; padding: 20px;">
+    <div class="text-center mb-5">
+      <h1 class="display-5 fw-bold text-white">Event Registration</h1>
+      <p class="text-white-50 mt-2">Register karne ke liye neeche di gayi details bharein.</p>
+    </div>
+
+    <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="row g-4">
+        <ng-container *ngFor="let field of formFields">
+          <div class="col-12 col-md-6 col-lg-4" [hidden]="field.hidden">
+            <label [for]="field.name" class="form-label flex-align-center">
+              <svg *ngIf="field.icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-svg" [innerHTML]="field.icon | safeHtml"></svg>
+              {{ field.label }} <span *ngIf="field.required" class="text-danger ms-1">*</span>
+            </label>
+            <ng-container [ngSwitch]="field.type">
+              <input *ngSwitchCase="'text'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control-custom">
+              <input *ngSwitchCase="'email'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control-custom">
+              <input *ngSwitchCase="'tel'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control-custom">
+              <input *ngSwitchCase="'number'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control-custom">
+              <input *ngSwitchCase="'date'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control-custom date-input">
+              <select *ngSwitchCase="'select'" [id]="field.name" [formControlName]="field.name" class="form-select-custom">
+                <option value="" disabled>Ek option chunein</option>
+                <option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</option>
+              </select>
+              <div *ngSwitchCase="'radio'" class="d-flex flex-wrap gap-4 mt-2">
+                <div class="form-check" *ngFor="let option of field.options">
+                  <input class="form-check-input" type="radio" [name]="field.name" [value]="option.value" [formControlName]="field.name" [id]="field.name + option.value">
+                  <label class="form-check-label" [for]="field.name + option.value">
+                    {{ option.label }}
+                  </label>
+                </div>
+              </div>
+              <div *ngSwitchCase="'checkbox'" [formArrayName]="field.name" class="d-flex flex-wrap gap-4 mt-2">
+                 <div class="form-check" *ngFor="let option of field.options; let i = index">
+                    <input class="form-check-input" type="checkbox" [formControlName]="i" (change)="onCheckboxChange($event, field.name, i)" [id]="field.name + i">
+                    <label class="form-check-label" [for]="field.name + i">
+                       {{ option.label }}
+                    </label>
+                 </div>
+              </div>
+              <input *ngSwitchCase="'file'" type="file" [id]="field.name" class="form-control-custom">
+
+            </ng-container>
+            <div *ngIf="dynamicForm.get(field.name)?.invalid && (dynamicForm.get(field.name)?.dirty || dynamicForm.get(field.name)?.touched)" class="text-danger small mt-1">
+              <div *ngIf="dynamicForm.get(field.name)?.errors?.['required']">Yeh field zaroori hai.</div>
+              <div *ngIf="dynamicForm.get(field.name)?.errors?.['email']">Kripya ek valid email daalein.</div>
+              <div *ngIf="dynamicForm.get(field.name)?.errors?.['pattern']">Kripya 10 digit ka phone number daalein.</div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="text-center mt-5">
+        <button type="submit" class="btn btn-primary submit-button px-5 py-2">
+          Sign me up
+        </button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+
+
+
+<div class="form-container-background" *ngIf="formFields.length > 0">
+  <div class="form-wrapper container-fluid">
+    <div class="text-center mb-5">
+      <h1 class="display-5 fw-bold text-white">{{ stepData.formName }}</h1>
+      <p class="text-white-50 mt-2">Kripya neeche di gayi details bharein.</p>
+    </div>
+
+    <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="row g-4">
+        <ng-container *ngFor="let field of formFields">
+          <div class="col-12 col-md-6 col-lg-4">
+            <label [for]="field.name" class="form-label d-flex align-items-center">
+              <svg *ngIf="field.icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 1.25rem; height: 1.25rem; margin-right: 0.5rem; color: #9ca3af;" [innerHTML]="field.icon | safeHtml"></svg>
+              {{ field.label }} <span *ngIf="field.required" class="text-danger ms-1">*</span>
+            </label>
+
+            <ng-container [ngSwitch]="field.type">
+              <input *ngSwitchCase="'text'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control">
+              <input *ngSwitchCase="'email'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control">
+              <input *ngSwitchCase="'number'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control">
+              <input *ngSwitchCase="'date'" [type]="field.type" [id]="field.name" [formControlName]="field.name" class="form-control">
+              <!-- Add other input types here -->
+            </ng-container>
+
+            <div *ngIf="dynamicForm.get(field.name)?.invalid && dynamicForm.get(field.name)?.touched" class="text-danger small mt-1">
+              <div *ngIf="dynamicForm.get(field.name)?.errors?.['required']">Yeh field zaroori hai.</div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="text-center mt-5">
+        <button type="submit" class="btn btn-primary px-5 py-2">
+          Submit & Continue
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

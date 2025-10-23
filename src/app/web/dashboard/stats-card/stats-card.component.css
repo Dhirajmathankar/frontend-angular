@@ -1,0 +1,51 @@
+.stats-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  .title {
+    margin: 0;
+    color: #6b7280;
+    font-weight: 500;
+  }
+  .value {
+    margin: 0.25rem 0 0;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #111827;
+  }
+}
+
+.description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.chart-placeholder {
+  height: 60px;
+  background: linear-gradient(to top, #e0e7ff, transparent);
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+  margin-top: auto; 
+
+  .footer-item {
+    font-size: 0.875rem;
+    color: #6b7280;
+    strong {
+      color: #111827;
+    }
+  }
+}

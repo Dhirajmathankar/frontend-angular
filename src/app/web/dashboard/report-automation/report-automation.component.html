@@ -1,0 +1,33 @@
+<div class="bg-gray-800 rounded-lg shadow-lg p-6">
+  <h2 class="text-xl font-semibold mb-4 text-white">Email Automation</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div class="bg-gray-700 rounded-lg p-4 flex flex-col items-center">
+      <span class="text-3xl font-bold text-green-400">275.50M</span>
+      <span class="text-sm text-gray-400">Open Rate</span>
+    </div>
+    <div class="bg-gray-700 rounded-lg p-4 flex flex-col items-center">
+      <span class="text-3xl font-bold text-blue-400">18.25%</span>
+      <span class="text-sm text-gray-400">Click Through Rate</span>
+    </div>
+    <div class="bg-gray-700 rounded-lg p-4 flex flex-col items-center">
+      <span class="text-3xl font-bold text-purple-400">125.80%</span>
+      <span class="text-sm text-gray-400">Send Volumes</span>
+    </div>
+  </div>
+
+  <h3 class="text-lg font-medium mb-2 text-gray-300">Send Volumes Trend</h3>
+  <div id="chart">
+   <apx-chart
+  [series]="chartOptions?.series"
+  [chart]="chartOptions?.chart"
+  [xaxis]="chartOptions?.xaxis"
+  [dataLabels]="chartOptions?.dataLabels"
+  [tooltip]="chartOptions?.tooltip"
+  [stroke]="chartOptions?.stroke"
+  [fill]="chartOptions?.fill"
+  [title]="chartOptions?.title"
+></apx-chart>
+
+  </div>
+</div>

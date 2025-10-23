@@ -1,0 +1,18 @@
+<div class="updates-card">
+  <div class="card-header">
+    <h4>Latest Updates</h4>
+    <a href="#" class="view-all">View all updates</a>
+  </div>
+  <ul class="updates-list">
+    <li *ngFor="let update of updates" class="update-item">
+      <div class="icon-container" [ngClass]="update.iconBg">
+        <i-lucide [name]="update.icon"></i-lucide>
+      </div>
+      <div class="update-content">
+        <p class="update-title">{{ update.title }}</p>
+        <p class="update-description">{{ update.description }}</p>
+      </div>
+      <p class="update-time">{{ update.time }}</p>
+    </li>
+  </ul>
+</div>
