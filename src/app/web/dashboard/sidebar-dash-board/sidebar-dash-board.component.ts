@@ -14,7 +14,7 @@ export class SidebarDashBoardComponent {
   navLinks = [
     { name: 'Dashboard', icon: 'layout-dashboard' }, 
      { name: 'Product', icon: 'shopping-basket' },
-    { name: 'Page Layouts', icon: 'layout' },
+    { name: 'Vendor-info', icon: 'layout' },
     { name: 'UI Element', icon: 'box' },
     { name: 'Basic', icon: 'layers' },
     { name: 'Forms & Table', icon: 'edit-3' },

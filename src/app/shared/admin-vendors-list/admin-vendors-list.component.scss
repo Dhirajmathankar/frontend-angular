@@ -1,0 +1,38 @@
+/* D:\Project New\APP_LOGIN_PAGE\src\app\admin\admin-vendors-list\admin-vendors-list.component.scss */
+
+.admin-vendor-list-container {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin-bottom: 2rem;
+}
+
+.vendor-grid {
+    display: flex;
+    flex-wrap: wrap; // कार्डों को अगली लाइन में wrap करने के लिए
+    gap: 25px; // कार्डों के बीच की दूरी
+    justify-content: flex-start; // कार्डों को बाईं ओर से शुरू करने के लिए
+}
+
+.loading-state, .error-state, .empty-state {
+    text-align: center;
+    padding: 40px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.error-state p {
+    color: #dc3545;
+    font-weight: bold;
+}

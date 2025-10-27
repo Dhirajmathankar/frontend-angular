@@ -1,0 +1,142 @@
+/* Color Variables */
+:root {
+  --primary-dark:#e9633e;
+  --secondary-orange:   #1f2b40;
+  --text-light: #fff;
+  --gray-border: #ddd;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: var(--primary-dark);
+}
+
+/* Header Styling */
+.header {
+  background-color: var(--primary-dark);
+  padding: 15px 0;
+  color: var(--text-light);
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.logo i {
+  color: var(--secondary-orange);
+  font-size: 1.8rem;
+  margin-right: 8px;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 50%;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 10px 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-box i {
+  color: #555;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+.search-box button {
+  background: var(--secondary-orange);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+  background: #cc5938; /* slightly darker */
+}
+
+/* Button in second search box */
+.btn-orange {
+  margin-left: 8px;
+  border-radius: 6px;
+}
+
+/* User Section */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-section .link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.user-section .link:hover {
+  color: var(--secondary-orange);
+}
+
+.cart {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.cart span {
+  margin-left: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .search-section {
+    width: 100%;
+  }
+  .user-section {
+    justify-content: center;
+  }
+}

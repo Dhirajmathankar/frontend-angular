@@ -1,0 +1,10 @@
+<div class="steps-container">
+  <div class="step-item" *ngFor="let step of steps; let i = index">
+    <div class="icon-circle">
+      <span class="emoji">{{ step.icon }}</span>
+    </div>
+    <div class="step-title">{{ step.description }}</div>
+    
+    <div class="connector" *ngIf="i < steps.length - 1"></div>
+  </div>
+</div>

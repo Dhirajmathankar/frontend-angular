@@ -1,0 +1,54 @@
+<div class="vendor-card" [ngClass]="vendor.status" [title]="vendor.tagline" style="width: 100%;">
+  
+  
+
+  <div style="display: flex;">
+     <div class="vendor-header">
+        <img [src]="vendor.profileImage?.url || 'assets/default-profile.png'"        
+       alt="{{ vendor.businessName }} Profile Image"          class="profile-img" />
+        <div class="vendor-info">
+            <h3>{{ vendor.businessName }}</h3>
+            <p class="tagline">{{ vendor.tagline }}</p>
+            <div class="status-container">
+                <span class="status-badge" [ngClass]="vendor.status">
+                    {{ vendor.status | titlecase }}
+                  </span>
+              </div>
+          </div>
+     </div>
+   <div class="vendor-details">
+   <p>📧 <strong>Email:</strong> {{ vendor.email }}</p>
+    <p>📞 <strong>Phone:</strong> {{ vendor.phone }}</p>
+        <p>📍 <strong>Location:</strong> {{ vendor.address.city }}, {{ vendor.address.state }}</p>
+        <p>📸 <strong>Services:</strong>
+             <!-- Skips the first three services and joins their titles -->
+      <!--        {{ vendor.services.map(s => s.title).join(', ') }} -->
+             <span *ngIf="vendor.services.length > 3">... ({{ vendor.services.length - 3 }} more)</span>
+    </p>
+  </div>
+    <div class="vendor-details">
+
+        <p>⭐ <strong>Rating:</strong>
+             <!-- avg, count are valid schema fields -->
+             {{ vendor.rating.avg | number:'1.1-1' }} ({{ vendor.rating.count | number }} reviews)
+          </p>
+        <p>💰 <strong>Total Earnings:</strong>
+             <!-- earnings.total is a valid schema field -->
+             ₹{{ vendor.earnings.total | number:'1.0-0' }}
+          </p>
+        <p>📅 <strong>Availability:</strong>
+             <!-- availability is an array of AvailabilitySchema in your schema -->
+             <span *ngIf="vendor.availability?.length > 0; else noAvailability">
+                 {{ formattedAvailability }}
+               </span>
+             <ng-template #noAvailability>Not set</ng-template>
+          </p>
+      </div>
+  </div>
+
+    <div class="actions">
+        <button class="btn-view" (click)="onViewDetails(vendor._id)">View Details</button>
+        <button class="btn-edit" (click)="onEdit(vendor._id)">Edit</button>
+        <button class="btn-delete" (click)="onDelete(vendor._id)">Delete</button>
+      </div>
+</div>

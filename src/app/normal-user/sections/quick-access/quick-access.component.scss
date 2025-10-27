@@ -1,0 +1,86 @@
+.categories-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.categories-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  /* Hide scrollbar for clean design */
+}
+
+.categories-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.card {
+  min-width: 280px; /* Adjusted size for the look */
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-wrapper {
+  height: 180px; /* Adjusted to look like the image ratio */
+  overflow: hidden;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.card-content .explore-link {
+  color: #e9633e; /* secondary-orange */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Arrow styling (basic) */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-arrow {
+  left: -20px;
+}
+
+.right-arrow {
+  right: -20px;
+}

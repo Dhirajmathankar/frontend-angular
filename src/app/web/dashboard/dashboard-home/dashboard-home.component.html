@@ -6,7 +6,7 @@
     <div class="content-wrapper">
         <app-dashboard-grid   *ngIf="selectedMenu === 'Dashboard'"  ></app-dashboard-grid>
         <app-product-showcase *ngIf="selectedMenu === 'Product'" [data]="showcasePageData"></app-product-showcase>
-      
+      <app-admin-vendors-list *ngIf="selectedMenu === 'Vendor-info'" ></app-admin-vendors-list>
     </div>
   </main>
 </div>

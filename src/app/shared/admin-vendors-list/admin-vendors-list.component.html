@@ -1,0 +1,25 @@
+<div class="admin-vendor-list-container">
+    <app-search-filter></app-search-filter>
+    <hr>
+    
+    <div *ngIf="isLoading" class="loading-state">
+        <p>Loading...</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-state">
+        <p>{{ errorMessage }}</p>
+    </div>
+    <div *ngIf="!isLoading && vendors.length > 0" class="vendor-grid">
+        <app-vendor-card 
+            *ngFor="let vendorItem of vendors" 
+            [vendor]="vendorItem" 
+            (vendorDeleted)="onVendorDeleted($event)"
+            style="width: 80vw;">
+        </app-vendor-card>
+    </div>
+
+    <div *ngIf="!isLoading && vendors.length === 0" class="empty-state">
+        <p> No Data Found </p>
+        <!-- <button class="btn-primary">नया वेंडर जोड़ें</button> -->
+    </div>
+</div>

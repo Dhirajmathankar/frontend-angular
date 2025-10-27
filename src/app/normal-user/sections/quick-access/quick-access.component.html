@@ -1,0 +1,17 @@
+<div class="categories-carousel-wrapper">
+  <div class="nav-arrow left-arrow">‹</div>
+  
+  <div class="categories-grid">
+    <div class="card" *ngFor="let cat of categories">
+      <div class="card-image-wrapper">
+        <img [src]="'assets/categories/' + cat.image" [alt]="cat.title" />
+      </div>
+      <div class="card-content">
+        <h3 class="title">{{ cat.title }}</h3>
+        <a href="#" class="explore-link">{{ cat.description }} &gt;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-arrow right-arrow">›</div>
+</div>

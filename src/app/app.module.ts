@@ -11,8 +11,11 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 // import { DashboardModule } from './dashboard/dashboard.module';
 import { WebModule } from './web/web.module';
+import { HttpClientModule } from '@angular/common/http';
 
-import { LucideAngularModule, Home, Settings, ChevronRight } from 'lucide-angular';
+import { LucideAngularModule, Home, Settings, ChevronRight, CalendarCheck, Search, CalendarDays, ShoppingCart } from 'lucide-angular';
+import { NormalUserModule } from './normal-user/normal-user.module';
+
 
 
 const firebaseConfig = {
@@ -27,7 +30,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+   
   ],
   imports: [
     // BrowserModule,
@@ -36,8 +40,12 @@ const firebaseConfig = {
      RouterModule.forRoot(routes), // 👈 use here
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
-    LucideAngularModule.pick({ Home, Settings, ChevronRight }) // Register icons here
-
+    LucideAngularModule.pick({ Home, Settings, ChevronRight,  CalendarCheck,
+      Search,
+      CalendarDays,
+      ShoppingCart }),
+    HttpClientModule,
+    NormalUserModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
