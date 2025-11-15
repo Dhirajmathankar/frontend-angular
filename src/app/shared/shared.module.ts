@@ -14,6 +14,14 @@ import { AdHostDirective } from '../web/web-add/ad-host.directive';
 import { VendorCardComponent } from './vendor-card/vendor-card.component';
 import { AdminVendorsListComponent } from './admin-vendors-list/admin-vendors-list.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { UserProfileComponent } from '../web/user-profile/user-profile.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'; // Crucial for mat-icon
+import { MatTabsModule } from '@angular/material/tabs'; // Crucial for mat-tab-group
 
 const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
   if (typeof value === 'object') {
@@ -32,6 +40,7 @@ const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
     VendorCardComponent,
     AdminVendorsListComponent,
     SearchFilterComponent,
+    UserProfileComponent
     // AdHostDirective
   
   ],
@@ -40,7 +49,16 @@ const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
     NgApexchartsModule ,
     LucideAngularModule.pick(icons),            // ✅ ngClass, ngSwitch, etc.
     FormsModule,                // ✅ Template forms
-    ReactiveFormsModule,   
+    ReactiveFormsModule, 
+
+    // materials node module 
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule
   ],
    exports: [
     SidebarDashBoardComponent, 
@@ -48,7 +66,18 @@ const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
     SafeHtmlPipe,
     VendorCardComponent,
     AdminVendorsListComponent,
-    SearchFilterComponent
+    SearchFilterComponent,
+    UserProfileComponent,
+
+
+    // materials node module
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule
   ]
 })
 export class SharedModule { }

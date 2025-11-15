@@ -1,18 +1,10 @@
-<header class="header">
+<!-- <header class="header">
   <div class="container">
-    <!-- LOGO -->
     <div class="logo">
       <lucide-icon name="calendar-check"></lucide-icon>
       <span>EventEase</span>
     </div>
-
-    <!-- SEARCH SECTION -->
     <div class="search-section">
-      <!-- <div class="search-box">
-        <input type="text" placeholder="e.g. Studio / DJ, Photographer">
-        <button><lucide-icon name="search"></lucide-icon></button>
-      </div> -->
-
       <div class="search-box">
         <input type="text" placeholder="Delhi, Pother">
         <lucide-icon name="calendar-days"></lucide-icon>
@@ -21,14 +13,99 @@
         </button>
       </div>
     </div>
-
-    <!-- USER SECTION -->
     <div class="user-section">
-      <a href="#" class="link">Login / Register</a>
+      <div class="link" (click)="userLoginSingUp()">Login / Register</div>
       <a href="#" class="link">My Booking</a>
       <a href="#" class="cart">
         <lucide-icon name="shopping-cart"></lucide-icon><span>(0)</span>
       </a>
     </div>
   </div>
-</header>
+</header> -->
+
+
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50" id="navbar">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center" style="flex-wrap: nowrap;">
+            <div class="flex items-center">
+<img loading="lazy" src="./assets/img/memoria-logo/memoria-logo-India.png" loading="lazy" style="width: 30%;" alt=""> 
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <div class="dropdown">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-orange-500">Home</a>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="#venues" class="nav-link text-gray-700 hover:text-orange-500">Venues</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Hotels</a>
+                        <a href="#" class="dropdown-item">Lounges</a>
+                        <a href="#" class="dropdown-item">Marriage Halls</a>
+                        <a href="#" class="dropdown-item">Outdoor Venues</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="#photographers" class="nav-link text-gray-700 hover:text-orange-500">Photographers</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Wedding Photography</a>
+                        <a href="#" class="dropdown-item">Pre-Wedding Shoot</a>
+                        <a href="#" class="dropdown-item">Candid Photography</a>
+                        <a href="#" class="dropdown-item">Traditional Photography</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="#blog" class="nav-link text-gray-700 hover:text-orange-500">Resources</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Festival Guides</a>
+                        <a href="#" class="dropdown-item">Planning Tips</a>
+                        <a href="#" class="dropdown-item">Tradition Insights</a>
+                        <a href="#" class="dropdown-item">Budget Calculators</a>
+                    </div>
+                </div>
+                
+                <!-- <a href="#analytics" class="nav-link text-gray-700 hover:text-orange-500">Analytics</a> -->
+                
+                <!-- <a href="#testimonials" class="nav-link text-gray-700 hover:text-orange-500">Testimonials</a> -->
+                
+                <!-- <a href="#team" class="nav-link text-gray-700 hover:text-orange-500">Our Team</a> -->
+                
+                <a href="#contact" class="nav-link text-gray-700 hover:text-orange-500">Contact</a>
+            </div>
+            
+            <div class="hidden md:flex space-x-4" style="margin-left: 20px;">
+                <button class="btn-secondary" id="login-btn" (click)="userLoginSingUp()">Login</button>
+                <button class="btn-primary" id="signup-btn" style="width: 120px;">Sign Up</button>
+            </div>
+            
+            <button class="md:hidden text-2xl text-gray-700" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="text-2xl text-gray-700 mb-8" id="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col space-y-4">
+            <a href="#home" class="text-gray-700 hover:text-orange-500 text-lg">Home</a>
+            <a href="#venues" class="text-gray-700 hover:text-orange-500 text-lg">Venues</a>
+            <a href="#photographers" class="text-gray-700 hover:text-orange-500 text-lg">Photographers</a>
+            <a href="#blog" class="text-gray-700 hover:text-orange-500 text-lg">Resources</a>
+            <!-- <a href="#analytics" class="text-gray-700 hover:text-orange-500 text-lg">Analytics</a> -->
+            <!-- <a href="#testimonials" class="text-gray-700 hover:text-orange-500 text-lg">Testimonials</a> -->
+            <!-- <a href="#team" class="text-gray-700 hover:text-orange-500 text-lg">Our Team</a> -->
+            <a href="#contact" class="text-gray-700 hover:text-orange-500 text-lg">Contact</a>
+            <button class="btn-secondary mt-4" id="mobile-login-btn">Login</button>
+            <button class="btn-primary" id="mobile-signup-btn">Sign Up</button>
+        </div>
+    </div>
+
+
+
+    

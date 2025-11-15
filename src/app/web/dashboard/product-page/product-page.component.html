@@ -1,0 +1,194 @@
+<div class="neumorphic-background" style="min-height: 0px;">
+  <div class="neumorphic-card">
+
+    <div class="row">
+      <div class="col-2">
+        <div>
+          <h6 class="form-title">
+            <i-lucide name="arrow-left" class="nav-icon" (click)="back()" ></i-lucide>
+            Vendor Shop
+          </h6>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="neumorphic-input-wrapper" style="height: 40px; display: flex; align-items: center;">
+          <input type="text" placeholder="Search Here..." formControlName="Name" class="neumorphic-input"
+            style="padding: 0px;">
+          <i-lucide name="search" class="nav-icon"></i-lucide>
+        </div>
+      </div>
+      <div class="col-2">
+        <div>
+
+        </div>
+      </div>
+
+      <div class="col-2">
+        <div>
+          <button type="submit" class="neumorphic-button-submit" style="float: right; margin-top: 0px;" (click)="openAddProductModal()">
+            ADD NEW
+          </button>
+        </div>
+      </div>
+
+
+
+
+
+
+      <!-- <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()">
+
+      <h3 class="section-title">Shop Details</h3>
+      <div class="form-group">
+        <label class="neumorphic-label">Shop Name</label>
+        <div class="neumorphic-input-wrapper">
+          <input type="text" formControlName="shopName" class="neumorphic-input">
+        </div>
+        </div>
+
+      <div class="form-group">
+        <label class="neumorphic-label">Tagline (Short Summary)</label>
+        <div class="neumorphic-input-wrapper">
+          <input type="text" formControlName="tagline" class="neumorphic-input">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="neumorphic-label">Shop Description</label>
+        <div class="neumorphic-input-wrapper-textarea">
+          <textarea formControlName="description" class="neumorphic-textarea"></textarea>
+        </div>
+      </div>
+
+      <h3 class="section-title">Contact & Classification</h3>
+      <div class="row">
+        <div class="col-6">
+          <label class="neumorphic-label">Shop Category</label>
+          <div class="neumorphic-input-wrapper">
+            <input type="text" formControlName="shopCategory" class="neumorphic-input" placeholder="e.g., Clothing, Electronics">
+          </div>
+        </div>
+        <div class="col-6">
+          <label class="neumorphic-label">Website URL</label>
+          <div class="neumorphic-input-wrapper">
+            <input type="url" formControlName="websiteUrl" class="neumorphic-input">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+         <div class="col-6">
+          <label class="neumorphic-label">Contact Email</label>
+          <div class="neumorphic-input-wrapper">
+            <input type="email" formControlName="contactEmail" class="neumorphic-input">
+          </div>
+        </div>
+        <div class="col-6">
+          <label class="neumorphic-label">Contact Phone</label>
+          <div class="neumorphic-input-wrapper">
+            <input type="tel" formControlName="contactPhone" class="neumorphic-input">
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-title">Shop Address</h3>
+      <div formGroupName="address">
+        <div class="form-group">
+          <label class="neumorphic-label">Street Address</label>
+          <div class="neumorphic-input-wrapper">
+            <input type="text" formControlName="street" class="neumorphic-input">
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-4">
+            <label class="neumorphic-label">City</label>
+            <div class="neumorphic-input-wrapper">
+              <input type="text" formControlName="city" class="neumorphic-input">
+            </div>
+          </div>
+          <div class="col-4">
+            <label class="neumorphic-label">Zip Code</label>
+            <div class="neumorphic-input-wrapper">
+              <input type="text" formControlName="zipCode" class="neumorphic-input">
+            </div>
+          </div>
+          <div class="col-4">
+            <label class="neumorphic-label">Country</label>
+            <div class="neumorphic-input-wrapper">
+              <input type="text" formControlName="country" class="neumorphic-input" placeholder="e.g., India">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="section-title">Shop Gallery Images</h3>
+      <div formArrayName="galleryImages">
+        <div class="row" *ngFor="let control of galleryImages.controls; let i = index">
+          <div class="col-9">
+            <label class="neumorphic-label">Image URL {{ i + 1 }}</label>
+            <div class="neumorphic-input-wrapper">
+              <input type="url" [formControlName]="i" class="neumorphic-input">
+            </div>
+          </div>
+          <div class="col-3 button-col">
+            <button type="button" (click)="removeImageField(i)" class="neumorphic-button-icon" [disabled]="galleryImages.length === 1">
+              <span class="icon-text">DEL</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" (click)="addImageField()" class="neumorphic-button-add">
+        Add Another Image
+      </button>
+
+      <button type="submit" [disabled]="vendorForm.invalid" class="neumorphic-button-submit">
+        SAVE PROFILE
+      </button>
+
+    </form> -->
+    </div>
+
+  </div>
+
+
+</div>
+
+<div class="row" *ngIf="!showAddProductModal">
+  <div class="col-4">
+    <div class="neumorphic-background" style="margin-top: 0px; min-height: 0px;">
+      <div class="neumorphic-card">
+        Hello
+      </div>
+    </div>
+  </div>
+   <div class="col-4">
+    <div class="neumorphic-background" style="margin-top: 0px; min-height: 0px;">
+      <div class="neumorphic-card">
+        Hello
+      </div>
+    </div>
+  </div>
+   <div class="col-4">
+    <div class="neumorphic-background" style="margin-top: 0px; min-height: 0px;">
+      <div class="neumorphic-card">
+        Hello
+      </div>
+    </div>
+  </div>
+   <div class="col-4">
+    <div class="neumorphic-background" style="margin-top: 0px; min-height: 0px;">
+      <div class="neumorphic-card">
+        Hello
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showAddProductModal">
+  <div>
+    <app-vendor-register ></app-vendor-register>
+  </div>
+</div>

@@ -17,7 +17,13 @@ import { FooterComponent } from './footer/footer.component';
 // This is the "container" component, we'll create it to host the full page layout
 import { HomeComponent } from './home/home.component';
 import { LucideAngularModule, LucideIconData } from 'lucide-angular';
-import * as allIcons from 'lucide'; 
+import * as allIcons from 'lucide';
+import { SliderBarHomeComponent } from './slider-bar-home/slider-bar-home.component';
+import { HomePageFilterComponent } from './home-page-filter/home-page-filter.component';
+import { HomePageCardInfoComponent } from './home-page-card-info/home-page-card-info.component';
+import { FestivalPlaningAnalyticsComponent } from './festival-planing-analytics/festival-planing-analytics.component';
+import { WhatOurClientSayComponent } from './what-our-client-say/what-our-client-say.component';
+import { FestivalPlaningResourcesComponent } from './festival-planing-resources/festival-planing-resources.component'; 
 
 const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
   if (typeof value === 'object') {
@@ -38,7 +44,13 @@ const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
     BlogAndReviewsComponent,
     BlogCardComponent,
     FooterComponent,
-    HomeComponent, // The component that will render the full page UI
+    HomeComponent,
+    SliderBarHomeComponent,
+    HomePageFilterComponent,
+    HomePageCardInfoComponent,
+    FestivalPlaningAnalyticsComponent,
+    WhatOurClientSayComponent,
+    FestivalPlaningResourcesComponent, // The component that will render the full page UI
   ],
   imports: [
     CommonModule,

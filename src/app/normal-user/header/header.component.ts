@@ -1,5 +1,6 @@
 // header.component.ts
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -15,4 +16,28 @@ export class HeaderComponent {
     { label: 'Anniversaries', icon: '💖', link: '/anniversary', active: false },
     { label: 'Accounts', icon: '🔑', link: '/accounts', active: false },
   ];
+  
+   constructor(
+      private router: Router
+    ) {
+    }
+  @Output() openMobileMenu = new EventEmitter();
+  @Output() openLogin = new EventEmitter();
+  @Output() openSignup = new EventEmitter();
+
+  toggleMobileMenu() {
+    this.openMobileMenu.emit();
+  }
+
+  openLoginModal() {
+    this.openLogin.emit();
+  }
+
+  openSignupModal() {
+    this.openSignup.emit();
+  }
+  userLoginSingUp(){
+    console.log("clicked");
+    this.router.navigate(['/login'])
+  }
 }

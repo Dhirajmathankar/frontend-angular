@@ -4,9 +4,16 @@
   <main class="main-content">
     <app-header-main></app-header-main>
     <div class="content-wrapper">
+        <app-user-profile style="    width: 100%;
+    margin-top: -25px;"  *ngIf="selectedMenu === 'user-profile'"  ></app-user-profile>
         <app-dashboard-grid   *ngIf="selectedMenu === 'Dashboard'"  ></app-dashboard-grid>
-        <app-product-showcase *ngIf="selectedMenu === 'Product'" [data]="showcasePageData"></app-product-showcase>
+         <app-product-page style="width: 100%; margin-top: -25px;" *ngIf="selectedMenu === 'Product'" ></app-product-page>
+
+        <app-product-showcase *ngIf="selectedMenu === 'Product Old'" [data]="showcasePageData"></app-product-showcase>
       <app-admin-vendors-list *ngIf="selectedMenu === 'Vendor-info'" ></app-admin-vendors-list>
+      <app-admin-vendors-list *ngIf="selectedMenu === 'Vendor'" ></app-admin-vendors-list>
+      <app-admin-vendors-list *ngIf="selectedMenu === 'User'" ></app-admin-vendors-list>
+      
     </div>
   </main>
 </div>

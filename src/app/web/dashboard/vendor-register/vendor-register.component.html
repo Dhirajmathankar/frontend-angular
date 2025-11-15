@@ -1,0 +1,244 @@
+<div class="neumorphic-background">
+  <div class="neumorphic-card">
+    <div class="header-section">
+      <h2 class="form-title">Vendor Shop Registration</h2>
+      <p class="subtitle">Bring your business online on our platform</p>
+    </div>
+
+    <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()">
+      <!-- BASIC INFO -->
+      <h3 class="section-title">Personal Details</h3>
+      <div class="row">
+        <div class="col-3">
+          <div class="neumorphic-circle-profile">
+            <img
+              [src]="vendorForm.get('profileImageUrl')?.value || defaultProfile"
+              alt="Vendor Logo"
+              class="profile-img"
+            />
+          </div>
+          <input
+            type="file"
+            (change)="onFileSelected($event, 'profileImageUrl')"
+            accept="image/*"
+            class="neumorphic-input"
+          />
+        </div>
+
+        <div class="col-3">
+          <label class="neumorphic-label">Name</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="text"
+              formControlName="Name"
+              class="neumorphic-input"
+            />
+          </div>
+
+          <label class="neumorphic-label">Email</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="email"
+              formControlName="Email"
+              class="neumorphic-input"
+            />
+          </div>
+
+          <label class="neumorphic-label">Phone Number</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="tel"
+              formControlName="PhoneNumber"
+              class="neumorphic-input"
+            />
+          </div>
+        </div>
+
+        <div class="col-3">
+          <label class="neumorphic-label">GST / ID Proof Number</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="text"
+              formControlName="businessIdNumber"
+              class="neumorphic-input"
+              placeholder="Optional but recommended"
+            />
+          </div>
+
+          <label class="neumorphic-label">Upload ID Proof</label>
+          <input
+            type="file"
+            (change)="onFileSelected($event, 'idProofUrl')"
+            accept="image/*,application/pdf"
+            class="neumorphic-input"
+          />
+        </div>
+
+        <div class="col-3">
+          <label class="neumorphic-label">City</label>
+          <div class="neumorphic-input-wrapper">
+            <input type="text" formControlName="city" class="neumorphic-input" />
+          </div>
+
+          <label class="neumorphic-label">Country</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="text"
+              formControlName="country"
+              class="neumorphic-input"
+              placeholder="e.g., India"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOP DETAILS -->
+      <h3 class="section-title">Shop Details</h3>
+      <div class="form-group">
+        <label class="neumorphic-label">Shop Name</label>
+        <div class="neumorphic-input-wrapper">
+          <input
+            type="text"
+            formControlName="shopName"
+            class="neumorphic-input"
+            placeholder="e.g., Moments Studio"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="neumorphic-label">Tagline (Short Summary)</label>
+        <div class="neumorphic-input-wrapper">
+          <input
+            type="text"
+            formControlName="tagline"
+            class="neumorphic-input"
+            placeholder="e.g., We make your events unforgettable!"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="neumorphic-label">Shop Description</label>
+        <div class="neumorphic-input-wrapper-textarea">
+          <textarea
+            formControlName="description"
+            class="neumorphic-textarea"
+            placeholder="Tell customers about your shop, experience, and specialties"
+          ></textarea>
+        </div>
+      </div>
+
+      <h3 class="section-title">Business Classification</h3>
+      <div class="row">
+        <div class="col-6">
+          <label class="neumorphic-label">Shop Category</label>
+          <div class="neumorphic-input-wrapper">
+            <select formControlName="shopCategory" class="neumorphic-input">
+              <option value="">Select Category</option>
+              <option value="Photography">Photography</option>
+              <option value="Catering">Catering</option>
+              <option value="Decoration">Decoration</option>
+              <option value="DJ">DJ / Music</option>
+              <option value="Venue">Venue / Lawn</option>
+              <option value="Makeup">Makeup Artist</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <label class="neumorphic-label">Website / Social Link</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="url"
+              formControlName="websiteUrl"
+              class="neumorphic-input"
+              placeholder="e.g., https://yourbusiness.com"
+            />
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-title">Price & Availability</h3>
+      <div class="row">
+        <div class="col-6">
+          <label class="neumorphic-label">Starting Price (₹)</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="number"
+              formControlName="basePrice"
+              class="neumorphic-input"
+            />
+          </div>
+        </div>
+
+        <div class="col-6">
+          <label class="neumorphic-label">Service Range</label>
+          <div class="neumorphic-input-wrapper">
+            <input
+              type="text"
+              formControlName="serviceRange"
+              class="neumorphic-input"
+              placeholder="e.g., Nagpur + 50km"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- GALLERY -->
+      <h3 class="section-title">Shop Gallery Images</h3>
+      <div formArrayName="galleryImages">
+        <div
+          class="row"
+          *ngFor="let control of galleryImages.controls; let i = index"
+        >
+          <div class="col-9">
+            <label class="neumorphic-label">Image URL {{ i + 1 }}</label>
+            <div class="neumorphic-input-wrapper">
+              <input
+                type="url"
+                [formControlName]="i"
+                class="neumorphic-input"
+                placeholder="https://example.com/photo.jpg"
+              />
+            </div>
+          </div>
+          <div class="col-3 button-col">
+            <button
+              type="button"
+              (click)="removeImageField(i)"
+              class="neumorphic-button-icon"
+              [disabled]="galleryImages.length === 1"
+            >
+              <span class="icon-text">DEL</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        (click)="addImageField()"
+        class="neumorphic-button-add"
+      >
+        + Add More Images
+      </button>
+
+      <div class="form-toggle">
+        <label>
+          <input type="checkbox" formControlName="isVisible" />
+          Show this shop publicly on marketplace
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="vendorForm.invalid"
+        class="neumorphic-button-submit"
+      >
+        ✅ Publish My Shop
+      </button>
+    </form>
+  </div>
+</div>

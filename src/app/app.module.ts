@@ -11,10 +11,13 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 // import { DashboardModule } from './dashboard/dashboard.module';
 import { WebModule } from './web/web.module';
-import { HttpClientModule } from '@angular/common/http';
 
 import { LucideAngularModule, Home, Settings, ChevronRight, CalendarCheck, Search, CalendarDays, ShoppingCart } from 'lucide-angular';
 import { NormalUserModule } from './normal-user/normal-user.module';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -45,9 +48,15 @@ const firebaseConfig = {
       CalendarDays,
       ShoppingCart }),
     HttpClientModule,
-    NormalUserModule, 
+    NormalUserModule,
+    BrowserAnimationsModule, 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

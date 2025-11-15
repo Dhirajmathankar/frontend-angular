@@ -15,6 +15,10 @@ import { ProjectsTableComponent } from './projects-table/projects-table.componen
 import { LatestUpdatesComponent } from './latest-updates/latest-updates.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductShowcaseComponent } from './product-showcase/product-showcase.component';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { VendorRegisterComponent } from './vendor-register/vendor-register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 // ✅ सिर्फ icons filter करना
 const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
@@ -37,6 +41,8 @@ const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
     ProjectsTableComponent,
     LatestUpdatesComponent,
     ProductShowcaseComponent,
+    ProductPageComponent,
+    VendorRegisterComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +50,8 @@ const icons = Object.entries(allIcons).reduce((acc, [key, value]) => {
     NgApexchartsModule ,
     LucideAngularModule.pick(icons),
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class DashboardModule { }

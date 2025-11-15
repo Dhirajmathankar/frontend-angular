@@ -1,0 +1,235 @@
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="venues-container">
+                <!-- Venue Card 1 - Hotel -->
+                <div class="card venue-card" data-location="delhi" data-venue-type="hotel" data-festival-type="wedding" data-capacity="large" data-price="premium">
+                    <div class="card-img">
+                        <img loading="lazy" src="https://picsum.photos/seed/delhi-luxury-hotel/400/300.jpg" alt="The Taj Palace Hotel">
+                        <div class="venue-type-badge hotel">Hotel</div>
+                        <div class="capacity-tag">Capacity: 400</div>
+                        <div class="price-tag">₹2,50,000/day</div>
+                        <div class="wishlist-btn" data-id="venue1">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="compare-btn" data-id="venue1">Compare</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">The Taj Palace Hotel</h3>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-gray-600">(425 reviews)</span>
+                        </div>
+                        <div class="festival-pills">
+                            <span class="festival-pill">Wedding</span>
+                            <span class="festival-pill">Reception</span>
+                            <span class="festival-pill">Sangeet</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Luxurious ballroom with traditional Indian decor and modern amenities for grand wedding celebrations.</p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Chanakyapuri, Delhi</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary flex-1" onclick="showQuickView('venue1')">Quick View</button>
+                            <button class="btn-primary flex-1">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Venue Card 2 - Marriage Hall -->
+                <div class="card venue-card" data-location="jaipur" data-venue-type="marriage-hall" data-festival-type="wedding" data-capacity="xlarge" data-price="luxury">
+                    <div class="card-img">
+                        <img loading="lazy" src="https://picsum.photos/seed/jaipur-marriage-hall/400/300.jpg" alt="Rajmahal Palace">
+                        <div class="venue-type-badge marriage-hall">Marriage Hall</div>
+                        <div class="capacity-tag">Capacity: 600</div>
+                        <div class="price-tag">₹1,80,000/day</div>
+                        <div class="wishlist-btn" data-id="venue2">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="compare-btn" data-id="venue2">Compare</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Rajmahal Palace</h3>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400"></i>
+                            <span class="ml-2 text-gray-600">(389 reviews)</span>
+                        </div>
+                        <div class="festival-pills">
+                            <span class="festival-pill">Wedding</span>
+                            <span class="festival-pill">Engagement</span>
+                            <span class="festival-pill">Reception</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Traditional Rajasthani architecture with sprawling gardens for royal wedding celebrations.</p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Jaipur, Rajasthan</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary flex-1" onclick="showQuickView('venue2')">Quick View</button>
+                            <button class="btn-primary flex-1">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Venue Card 3 - Lounge -->
+                <div class="card venue-card" data-location="mumbai" data-venue-type="lounge" data-festival-type="engagement" data-capacity="medium" data-price="mid">
+                    <div class="card-img">
+                        <img loading="lazy" src="https://picsum.photos/seed/mumbai-lounge/400/300.jpg" alt="Skyline Lounge">
+                        <div class="venue-type-badge lounge">Lounge</div>
+                        <div class="capacity-tag">Capacity: 150</div>
+                        <div class="price-tag">₹80,000/day</div>
+                        <div class="wishlist-btn" data-id="venue3">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="compare-btn" data-id="venue3">Compare</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Skyline Lounge</h3>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="far fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-gray-600">(312 reviews)</span>
+                        </div>
+                        <div class="festival-pills">
+                            <span class="festival-pill">Engagement</span>
+                            <span class="festival-pill">Cocktail Party</span>
+                            <span class="festival-pill">Sangeet</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Rooftop lounge with panoramic city views, perfect for intimate engagement ceremonies.</p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Worli, Mumbai</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary flex-1" onclick="showQuickView('venue3')">Quick View</button>
+                            <button class="btn-primary flex-1">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Venue Card 4 - Outdoor Venue -->
+                <div class="card venue-card" data-location="udaipur" data-venue-type="outdoor" data-festival-type="wedding" data-capacity="large" data-price="premium">
+                    <div class="card-img">
+                        <img loading="lazy" src="https://picsum.photos/seed/udaipur-outdoor-venue/400/300.jpg" alt="Lakeview Garden">
+                        <div class="venue-type-badge hotel">Outdoor Venue</div>
+                        <div class="capacity-tag">Capacity: 350</div>
+                        <div class="price-tag">₹2,20,000/day</div>
+                        <div class="wishlist-btn" data-id="venue4">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="compare-btn" data-id="venue4">Compare</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Lakeview Garden</h3>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-gray-600">(278 reviews)</span>
+                        </div>
+                        <div class="festival-pills">
+                            <span class="festival-pill">Wedding</span>
+                            <span class="festival-pill">Mehendi</span>
+                            <span class="festival-pill">Haldi</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Scenic outdoor venue with lake views and traditional mandap setups for dream weddings.</p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Udaipur, Rajasthan</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary flex-1" onclick="showQuickView('venue4')">Quick View</button>
+                            <button class="btn-primary flex-1">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Venue Card 5 - Marriage Hall -->
+                <div class="card venue-card" data-location="bangalore" data-venue-type="marriage-hall" data-festival-type="reception" data-capacity="medium" data-price="mid">
+                    <div class="card-img">
+                        <img loading="lazy" src="https://picsum.photos/seed/bangalore-marriage-hall/400/300.jpg" alt="Nandi Grand Hall">
+                        <div class="venue-type-badge marriage-hall">Marriage Hall</div>
+                        <div class="capacity-tag">Capacity: 250</div>
+                        <div class="price-tag">₹95,000/day</div>
+                        <div class="wishlist-btn" data-id="venue5">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="compare-btn" data-id="venue5">Compare</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Nandi Grand Hall</h3>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="far fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-gray-600">(196 reviews)</span>
+                        </div>
+                        <div class="festival-pills">
+                            <span class="festival-pill">Reception</span>
+                            <span class="festival-pill">Sangeet</span>
+                            <span class="festival-pill">Engagement</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Spacious hall with modern amenities and traditional decor for memorable receptions.</p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Whitefield, Bangalore</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary flex-1" onclick="showQuickView('venue5')">Quick View</button>
+                            <button class="btn-primary flex-1">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Venue Card 6 - Hotel -->
+                <div class="card venue-card" data-location="goa" data-venue-type="hotel" data-festival-type="wedding" data-capacity="large" data-price="luxury">
+                    <div class="card-img">
+                        <img loading="lazy" src="https://picsum.photos/seed/goa-beach-hotel/400/300.jpg" alt="Beach Paradise Resort">
+                        <div class="venue-type-badge hotel">Hotel</div>
+                        <div class="capacity-tag">Capacity: 300</div>
+                        <div class="price-tag">₹1,50,000/day</div>
+                        <div class="wishlist-btn" data-id="venue6">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="compare-btn" data-id="venue6">Compare</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Beach Paradise Resort</h3>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400"></i>
+                            <span class="ml-2 text-gray-600">(456 reviews)</span>
+                        </div>
+                        <div class="festival-pills">
+                            <span class="festival-pill">Wedding</span>
+                            <span class="festival-pill">Reception</span>
+                            <span class="festival-pill">Sangeet</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Beachfront resort with private beach access for romantic seaside wedding ceremonies.</p>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Calangute, Goa</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-primary flex-1" onclick="showQuickView('venue6')">Quick View</button>
+                            <button class="btn-primary flex-1">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>

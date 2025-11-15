@@ -1,0 +1,211 @@
+// vendor-profile.component.scss
+
+// Variables
+$background-color: #e0e5ec; 
+$primary-color: #3f51b5; // Deep Blue for main actions
+$secondary-color: #00bcd4; // Teal for Add/Delete
+$text-color: #333;
+$muted-color: #6a748c;
+
+.neumorphic-background {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; // Align top in the viewport
+  min-height: 100vh;
+  background: $background-color;
+  padding: 15px 10px;
+}
+
+.neumorphic-card {
+  width: 100%;
+  background: $background-color;
+  padding: 10px 10px 0px 15px;
+  border-radius: 0px;
+  box-shadow: 15px 15px 30px #a3b1c6, 
+              -15px -15px 30px #ffffff;
+  box-sizing: border-box; 
+}
+
+// --- Header & Profile Image Styling ---
+.header-section {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.neumorphic-circle-profile {
+  width: 200px;
+    height: 200px;
+    background: #e0e5ec;
+    border-radius: 50%;
+    margin: 0 0px auto;
+    box-shadow: 7px 7px 15px #a3b1c6, -7px -7px 15px #ffffff;
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    object-fit: cover;
+    padding: 5px; // Padding for the profile image inside the circle
+  }
+}
+
+.form-title {
+  color: $primary-color;
+  font-weight: 700;
+  margin-top: 0;
+  font-size: 1.8em;
+}
+
+.section-title {
+    color: $muted-color;
+    font-size: 1.2em;
+    border-bottom: 1px solid #c7d0de; // Subtle separator
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+// --- Layout Grid (Flexbox) ---
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 0; // Managed by padding/margins of form-group
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+// Column Definitions (Based on a 12-unit grid for responsiveness)
+$total-cols: 12;
+
+@mixin column-classes($suffix, $width) {
+    .col-#{$suffix} {
+        flex: 0 0 $width;
+        max-width: $width;
+        padding-right: 15px; // Gutters
+        box-sizing: border-box;
+    }
+}
+
+// Desktop (Large screen) classes
+@include column-classes(12, 100%);
+@include column-classes(9, (9 / $total-cols) * 100%); // For dynamic field with button
+@include column-classes(6, 50%);
+@include column-classes(4, (4 / $total-cols) * 100%);
+@include column-classes(3, (3 / $total-cols) * 100%);
+
+.button-col {
+    display: flex;
+    align-items: flex-end; // Align button to the bottom of the input row
+    padding-bottom: 20px;
+}
+
+// Mobile Responsiveness: All columns stack on small screens
+@media (max-width: 768px) {
+    .col-12, .col-9, .col-6, .col-4, .col-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+    }
+    .button-col {
+        margin-bottom: 20px; // Space below button when stacked
+    }
+}
+
+
+// --- Input Styling (Debossed) ---
+.neumorphic-label {
+  display: block;
+  font-size: 0.85em;
+  color: $muted-color;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.neumorphic-input-wrapper, .neumorphic-input-wrapper-textarea {
+  background: $background-color;
+  border-radius: 10px;
+  box-shadow: inset 3px 3px 6px #a3b1c6, 
+              inset -3px -3px 6px #ffffff;
+  padding: 5px 10px; 
+}
+
+.neumorphic-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px 0;
+  color: $text-color;
+  font-size: 1em;
+}
+
+.neumorphic-textarea {
+  @extend .neumorphic-input;
+  height: 80px;
+  resize: vertical;
+}
+
+// --- Button Styling ---
+.neumorphic-button-submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: $primary-color;
+  color: white;
+  font-weight: 600;
+  margin-top: 30px;
+  box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 2px 2px 5px #a3b1c6, -2px -2px 5px #ffffff;
+  }
+  &:active {
+    box-shadow: inset 2px 2px 5px #a3b1c6, inset -2px -2px 5px #ffffff;
+  }
+  &:disabled {
+    background: #cccccc;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+.neumorphic-button-add {
+    @extend .neumorphic-button-submit;
+    background: $secondary-color;
+    margin-top: 10px;
+    font-size: 0.9em;
+    width: auto;
+    padding: 10px 20px;
+}
+
+.neumorphic-button-icon {
+    @extend .neumorphic-button-submit;
+    background: #d9534f; // Red/Danger color
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 0.9em;
+    
+    .icon-text {
+        display: block; // Ensures text is block
+    }
+}
+
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.nav-icon:hover {
+  color: #007bff;
+}
