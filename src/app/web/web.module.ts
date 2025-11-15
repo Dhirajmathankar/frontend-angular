@@ -24,4 +24,5 @@ import { AdHostDirective } from './web-add/ad-host.directive';
   ],
   exports: [AdHostDirective]  
 })
+
 export class WebModule { }
