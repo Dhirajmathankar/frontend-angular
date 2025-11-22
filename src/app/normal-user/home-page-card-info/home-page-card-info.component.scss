@@ -1,0 +1,389 @@
+/* ===========================================
+   GRID SYSTEM (3 Cards Per Row)
+=========================================== */
+#venues-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 25px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================================
+   CARD STYLE
+=========================================== */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+  transition: 0.25s;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.13);
+  }
+}
+
+/* ===========================================
+   IMAGE BLOCK
+=========================================== */
+.card-img {
+  position: relative;
+  width: 100%;
+  height: 210px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* BADGES */
+.capacity-tag, .price-tag {
+  position: absolute;
+  top: 12px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.capacity-tag {
+  left: 12px;
+  background: #1e3a8a;
+  color: white;
+}
+
+.price-tag {
+  right: 55px;
+  background: #ffb6a7;
+  color: #b91c1c;
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  background: #ffffffd9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.20);
+  cursor: pointer;
+
+  i.fas.fa-heart {
+    color: red !important;
+  }
+}
+
+.compare-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #1e40af;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===========================================
+   CARD BODY
+=========================================== */
+.card-body {
+  padding: 22px;
+}
+
+.card-body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+/* Rating */
+.rating i {
+  color: #FFC107 !important;
+  font-size: 16px;
+}
+
+.rating span {
+  margin-left: 6px;
+  color: #6b7280;
+}
+
+/* Event Pills */
+.pill {
+  background: #FF7A00;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  margin-right: 6px;
+  font-weight: 600;
+}
+
+/* Description */
+.description {
+  color: #4b5563;
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.4rem;
+}
+
+/* Location */
+.location {
+  color: #1E3A8A;
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  i { color: #1E3A8A; }
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary,
+.btn-book {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff7a00, #ff9d00);
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(255, 126, 0, 0.30);
+
+  &:hover {
+    background: linear-gradient(45deg, #e86a00, #ff9100);
+  }
+}
+
+.btn-book {
+  margin-left: 10px;
+}
+
+/* ===========================================
+   QUICK VIEW POPUP
+=========================================== */
+.quickview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.quickview-box {
+  width: 650px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  position: relative;
+  animation: popup .25s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 32px;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  &:hover { color: red; }
+}
+
+/* Slider */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #00000088;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.slide-btn.left { left: 10px; }
+.slide-btn.right { right: 10px; }
+
+/* ===========================================
+   COMPARE POPUP
+=========================================== */
+.compare-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.compare-box {
+  width: 90%;
+  max-width: 1100px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  position: relative;
+  animation: popup .25s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.compare-box .close-btn {
+  right: 18px;
+  top: 10px;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.compare-item {
+  background: #f9fafb;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 12px;
+  }
+}
+
+.remove-btn {
+  padding: 8px 12px;
+  background: #e63946;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  &:hover { background: #c71c2b; }
+}
+
+/* Animation */
+@keyframes popup {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.compare-now-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.compare-now-btn {
+  background: linear-gradient(45deg, #1e40af, #3b82f6);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.25);
+
+  &:hover {
+    background: linear-gradient(45deg, #1e3a8a, #2563eb);
+  }
+}
+
+.compare-table-box {
+  width: 90%;
+  max-width: 1100px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  th, td {
+    border: 1px solid #DDD;
+    padding: 12px;
+    text-align: center;
+  }
+
+  th {
+    background: #1e3a8a;
+    color: white;
+    font-size: 16px;
+  }
+
+  td {
+    background: #f8fafc;
+  }
+}
