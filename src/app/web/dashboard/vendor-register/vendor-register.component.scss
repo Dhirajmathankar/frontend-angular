@@ -1,7 +1,7 @@
 // vendor-profile.component.scss
 
 // Variables
-$background-color: #e0e5ec; 
+$background-color: #e0e5ec;
 $primary-color: #3f51b5; // Deep Blue for main actions
 $secondary-color: #00bcd4; // Teal for Add/Delete
 $text-color: #333;
@@ -21,9 +21,9 @@ $muted-color: #6a748c;
   background: $background-color;
   padding: 40px;
   border-radius: 0px;
-  box-shadow: 15px 15px 30px #a3b1c6, 
+  box-shadow: 15px 15px 30px #a3b1c6,
               -15px -15px 30px #ffffff;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 // --- Header & Profile Image Styling ---
@@ -69,7 +69,7 @@ $muted-color: #6a748c;
 // --- Layout Grid (Flexbox) ---
 .row {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 0; // Managed by padding/margins of form-group
     margin-bottom: 15px;
 }
@@ -129,9 +129,9 @@ $total-cols: 12;
 .neumorphic-input-wrapper, .neumorphic-input-wrapper-textarea {
   background: $background-color;
   border-radius: 10px;
-  box-shadow: inset 3px 3px 6px #a3b1c6, 
+  box-shadow: inset 3px 3px 6px #a3b1c6,
               inset -3px -3px 6px #ffffff;
-  padding: 5px 10px; 
+  padding: 5px 10px;
 }
 
 .neumorphic-input {
@@ -192,7 +192,7 @@ $total-cols: 12;
     width: 100%;
     padding: 10px 5px;
     font-size: 0.9em;
-    
+
     .icon-text {
         display: block; // Ensures text is block
     }

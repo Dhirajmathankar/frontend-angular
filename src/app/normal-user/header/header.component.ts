@@ -1,5 +1,4 @@
-// header.component.ts
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,36 +7,74 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  navItems = [
-    { label: 'Wedding', icon: '💍', link: '/wedding', active: true },
-    { label: 'Birthday', icon: '🎂', link: '/birthday', active: false },
-    { label: 'Parties', icon: '🎉', link: '/parties', active: false },
-    { label: 'Foods', icon: '🍽️', link: '/foods', active: false },
-    { label: 'Anniversaries', icon: '💖', link: '/anniversary', active: false },
-    { label: 'Accounts', icon: '🔑', link: '/accounts', active: false },
-  ];
-  
-   constructor(
-      private router: Router
-    ) {
+
+  mobileOpen = false;
+  activeDropdown: string | null = null;
+
+  // New Features
+  isShrunk = false;
+  isHidden = false;
+  lastScroll = 0;
+  activeSection: string = '';
+
+  constructor(private router: Router) {}
+
+  // -------------------------
+  // DROPDOWN CONTROL
+  // -------------------------
+  openDropdown(menu: string) {
+    this.activeDropdown = menu;
+  }
+
+  closeDropdown() {
+    this.activeDropdown = null;
+  }
+
+  // -------------------------
+  // LOGIN NAVIGATION
+  // -------------------------
+  userLoginSingUp() {
+    this.router.navigate(['/login']);
+  }
+
+  // -------------------------
+  // SCROLL LISTENER (Shrink + Hide + Highlight)
+  // -------------------------
+  @HostListener('window:scroll')
+  onScroll() {
+    const current = window.scrollY;
+
+    // 1️⃣ Navbar shrink after small scroll
+    this.isShrunk = current > 20;
+
+    // 2️⃣ Auto hide navbar when scrolling down
+    if (current > this.lastScroll && current > 150) {
+      this.isHidden = true;
+    } else {
+      this.isHidden = false;
     }
-  @Output() openMobileMenu = new EventEmitter();
-  @Output() openLogin = new EventEmitter();
-  @Output() openSignup = new EventEmitter();
 
-  toggleMobileMenu() {
-    this.openMobileMenu.emit();
+    this.lastScroll = current;
+
+    // 3️⃣ Detect active section (optional)
+    this.detectActiveSection();
   }
 
-  openLoginModal() {
-    this.openLogin.emit();
-  }
+  // -------------------------
+  // ACTIVE SECTION HIGHLIGHT
+  // -------------------------
+  detectActiveSection() {
+    const sections = ['home', 'venues', 'photographers', 'blog', 'contact'];
 
-  openSignupModal() {
-    this.openSignup.emit();
-  }
-  userLoginSingUp(){
-    console.log("clicked");
-    this.router.navigate(['/login'])
+    for (let sec of sections) {
+      const element = document.getElementById(sec);
+      if (!element) continue;
+
+      const rect = element.getBoundingClientRect();
+
+      if (rect.top <= 150 && rect.bottom >= 150) {
+        this.activeSection = sec;
+      }
+    }
   }
 }

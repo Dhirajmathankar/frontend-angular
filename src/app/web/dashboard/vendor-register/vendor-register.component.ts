@@ -4,7 +4,7 @@ import { DashboardService } from '../dashboard.service';
 @Component({
   selector: 'app-vendor-register',
   templateUrl: './vendor-register.component.html',
-  styleUrls: ['./vendor-register.component.css']
+  styleUrls: ['./vendor-register.component.scss']
 })
 export class VendorRegisterComponent implements OnInit {
   vendorForm!: FormGroup;
